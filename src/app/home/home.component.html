@@ -1,2 +1,104 @@
-<h3>Home Component</h3>
-<p>Welcome to Angular Seed</p>
+
+<div class="container" *ngIf="languages.length>0">
+    <h3>employee FORM</h3>
+    <!--<form #form="ngForm" novalidate (submit)="submitForm(form)">-->
+        <!--<div class="form-group" [class.has-error]="firstName.invalid && firstName.touched">
+            <label  class="control-label"> First name </label>
+            <input  #firstName="ngModel"  type="text" required class="form-control" required placeholder="Name" name="firstName" [ngModel]="model.firstName" (ngModelChange)="firstNameToUpperCase($event)"> 
+        </div>
+
+        <div *ngIf="firstName.invalid && firstName.dirty" class="alert alert-danger">
+            First Name is required
+        </div>
+
+       
+
+
+
+        <div class="form-group">
+            <label > Last name </label>
+            <input #lastName="ngModel" required type="text" class="form-control" required placeholder="LastName" name="lastname" [(ngModel)]="model.lastName"> 
+        </div>
+
+        <div *ngIf="lastName.invalid && lastName.dirty" class="alert alert-danger">
+            Last Name is required
+        </div>
+
+        <div class="checkbox">
+            <label>
+                <input type="checkbox" name="is-full-time" ngModel [(ngModel)]="model.isFullTime"> Full Time Employee
+            </label>
+        </div>
+
+        <label> Payment Type </label>
+        <div class="radio">
+            <label>
+                <input type="radio" name="paymentType" value="w2" checked [(ngModel)]="model.paymentType"> w2
+            </label>
+        </div>
+
+        <div class="radio">
+            <label>
+                <input type="radio" name="paymentType" value="1099" [(ngModel)]="model.paymentType"> 1099
+            </label>
+        </div>
+
+         <div class="form-group" [class.has-error]="hasPrimaryLanguageError">
+            <label class="control-label"> Primary Language </label>
+            <select #primaryLanguage class="form-control" name="primaryLanguage" [(ngModel)]="model.primaryLanguage" (blur)="validatePrimaryLanguage(primaryLanguage.value)" (change)="validatePrimaryLanguage(primaryLanguage.value)">
+                <option value="default"> Select a language.... </option>
+                <option *ngFor="let lang of languages"> {{lang}} </option>
+            </select> 
+        </div>
+         -->
+
+
+        <!--<div class="form-group">
+            <label> Date hired </label>
+            <input type="date" class="form-control"> 
+        </div>
+
+        -->
+        <!--<button type="submit" class="btn btn-primary" [disabled]="form.invalid"> Ok </button>-->
+
+        <!--{{form.valid}}-->
+
+    <!--</form>-->
+    <!--Model :{{model | json }}
+    <br>
+    Angular: {{form.value | json }}-->
+
+    <form> 
+        <div class="form-group" style="display:inline-block;">
+            <datepicker name="startDate" [(ngModel)]="startDate" [showWeeks]="false" > </datepicker>
+        </div>
+
+        <div class="form-group" style="display:inline-block;">
+            <timepicker name="startTime" [(ngModel)]="startTime" > </timepicker>
+        </div>
+
+        <button type="button" class="btn " [class.btn-primary]="onOffSwitch==='on'" name="onOffSwitch"
+                [(ngModel)]="onOffSwitch" btnCheckbox
+                btnCheckboxTrue="on" btnCheckboxFalse="off">
+        {{ onOffSwitch}}
+        </button>
+
+        <div class="btn-group">
+            <label class="btn btn-success" [(ngModel)]="radioModel" name="radio" btnRadio="Left"
+                    >Left</label>
+            <label class="btn btn-success" [(ngModel)]="radioModel" name="radio" btnRadio="Middle"
+                    >Middle</label>
+            <label class="btn btn-success" [(ngModel)]="radioModel" name="radio" btnRadio="Right"
+                    >Right</label>
+        </div>
+
+        <div class="btn-group">
+            <rating name="postRating" [(ngModel)]="postRating" [stateOn]="'glyphicon-check'" [stateOff]="'glyphicon-unchecked'" (onHover)="hover($event)" (onLeave)="leave($event)"> </rating>
+        </div>
+        <h3> {{postRating}} </h3>
+
+    </form>
+
+    <h3> {{startDate}} </h3>
+</div>
+
